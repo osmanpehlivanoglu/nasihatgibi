@@ -22,8 +22,8 @@ def get_random_document(collection):
 
 def set_message(document):
     return f"{document['title']}\n" \
-           f"{document['advice']}\n" \
-           f"{document['book']}\n\n" \
+           f"{document['advice']}\n\n" \
+           f"{document['book']}\n" \
            f"{document['author']}\n" \
            f"{document['publisher']}"
 
