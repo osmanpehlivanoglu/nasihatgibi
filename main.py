@@ -21,11 +21,11 @@ def get_random_document(collection):
 
 
 def set_message(document):
-    return f"\033[1m{document['title']}\033[0m\n" \
+    return f"{document['title']}\n" \
            f"{document['advice']}\n" \
-           f"\033[4mKitap:\033[0m{document['book']}\n" \
-           f"\033[4mYazar:\033[0m{document['author']}\n" \
-           f"\033[4mYayınevi:\033[0m{document['publisher']}"
+           f"{document['book']}\n\n" \
+           f"{document['author']}\n" \
+           f"{document['publisher']}"
 
 
 def send_message_to_gibi(bot_token, chat_id, message):
