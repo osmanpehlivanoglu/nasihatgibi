@@ -21,11 +21,16 @@ def get_random_document(collection):
 
 
 def set_message(document):
-    return f"{document['title']}\n" \
-           f"{document['advice']}\n\n" \
-           f"{document['book']}\n" \
-           f"{document['author']}\n" \
-           f"{document['publisher']}"
+    if document['book']:
+        return f"\n☝️\n\n{document['title']}\n\n" \
+               f"{document['advice']}\n\n" \
+               f"Kitap: {document['book']}\n" \
+               f"Yazar: {document['author']}\n" \
+               f"Yayınevi: {document['publisher']}\n"
+    else:
+        return f"\n☝️\n\n{document['title']}\n\n" \
+               f"{document['advice']}\n" \
+
 
 
 def send_message_to_gibi(bot_token, chat_id, message):
@@ -82,7 +87,8 @@ def main():
     collection = db['advices']
     random_document = get_random_document(collection)
     message = set_message(random_document)
-    send_message_to_gibi(bot_token, chat_id, message)
+    print(message)
+    # send_message_to_gibi(bot_token, chat_id, message)
     client.close()
 
 
