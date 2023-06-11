@@ -22,15 +22,14 @@ def get_random_document(collection):
 
 def set_message(document):
     if document['book']:
-        return f"\n☝️\n\n{document['title']}\n\n" \
+        return f"\n\n☝️\n\n{document['title']}\n\n" \
                f"{document['advice']}\n\n" \
                f"📖 Kitap: {document['book']}\n" \
                f"📝 Yazar: {document['author']}\n" \
-               f"📚 Yayınevi: {document['publisher']}\n\n🎈\n"
+               f"📚 Yayınevi: {document['publisher']}\n\n🎈\n\n"
     else:
-        return f"\n☝️\n\n{document['title']}\n\n" \
-               f"{document['advice']}\n\n🎈\n" \
-
+        return f"\n\n☝️\n\n{document['title']}\n\n" \
+               f"{document['advice']}\n\n🎈\n\n"
 
 
 def send_message_to_gibi(bot_token, chat_id, message):
