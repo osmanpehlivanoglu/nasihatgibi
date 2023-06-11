@@ -24,12 +24,12 @@ def set_message(document):
     if document['book']:
         return f"\n☝️\n\n{document['title']}\n\n" \
                f"{document['advice']}\n\n" \
-               f"Kitap: {document['book']}\n" \
-               f"Yazar: {document['author']}\n" \
-               f"Yayınevi: {document['publisher']}\n"
+               f"📖 Kitap: {document['book']}\n" \
+               f"📝 Yazar: {document['author']}\n" \
+               f"📚 Yayınevi: {document['publisher']}\n\n🎈\n"
     else:
         return f"\n☝️\n\n{document['title']}\n\n" \
-               f"{document['advice']}\n" \
+               f"{document['advice']}\n\n🎈\n" \
 
 
 
@@ -87,8 +87,7 @@ def main():
     collection = db['advices']
     random_document = get_random_document(collection)
     message = set_message(random_document)
-    print(message)
-    # send_message_to_gibi(bot_token, chat_id, message)
+    send_message_to_gibi(bot_token, chat_id, message)
     client.close()
 
 
